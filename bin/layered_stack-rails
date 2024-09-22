@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby -wU
+require 'layered_stack_rails'
+LayeredStackRails::Cli.start(ARGV)

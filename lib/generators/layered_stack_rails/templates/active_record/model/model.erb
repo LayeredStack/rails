@@ -1,0 +1,9 @@
+class <%= @class_name %> < ApplicationRecord
+  <%= "# <associations>" %>
+  <%= @associations.map { |association| association }.join("\n  ") %>
+  <%= "# </associations>" %>
+
+  <%= "# <validations>" %>
+  <%= @validations.map { |validation| validation }.join("\n  ") %>
+  <%= "# </validations>" %>
+end

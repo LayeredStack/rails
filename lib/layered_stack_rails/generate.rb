@@ -13,13 +13,13 @@ module LayeredStackRails
       def execute
         logger.info("> layered_stack-rails/generate_new")
 
-        yaml_content = YAML.load_file(File.join("layered_stack", "resources.yml"))
+        yaml_content = YAML.load_file(File.join("..", "app.yml"))
         resources = yaml_content["resources"]
         resources.each do |model_name, model_data|
           if model_data
             system("rails generate layered_stack_rails:scaffold #{model_name}")
           else
-            logger.error("Model #{model_name} not found in resources.yml")
+            logger.error("Model #{model_name} not found in app.yml")
           end
         end
       end

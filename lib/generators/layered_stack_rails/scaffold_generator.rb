@@ -7,14 +7,14 @@ class LayeredStackRails::ScaffoldGenerator < Rails::Generators::Base
   argument :model_name, type: :string
 
   def execute
-    yaml_content = YAML.load_file(File.join("layered_stack", "resources.yml"))
+    yaml_content = YAML.load_file(File.join("..", "app.yml"))
 
     model_data = yaml_content["resources"][model_name]
     if model_data
       puts "Generating model #{model_name} with attributes: #{model_data["attributes"]}"
       generate_scaffold(model_name, model_data["attributes"], model_data["associations"])
     else
-      puts "Model #{model_name} not found in resources.yml"
+      puts "Model #{model_name} not found in app.yml"
     end
   end
 

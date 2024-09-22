@@ -6,12 +6,7 @@ Dir[File.join(__dir__, 'layered_stack_rails/**/*.rb')].each { |file| require_rel
 
 module LayeredStackRails
   class Cli < Thor
-    desc "product", "Creates an example product.yml resource file in the layered_stack/resources directory"
-    def example
-      LayeredStackRails::Example.execute
-    end
-
-    desc "generate", "Generates resources from ./layered_stack/resources.yml"
+    desc "generate", "Generates resources from ../app.yml"
     def generate
       LayeredStackRails::Generate.execute
     end

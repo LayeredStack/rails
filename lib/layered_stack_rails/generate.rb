@@ -11,9 +11,9 @@ module LayeredStackRails
 
     no_commands do
       def execute
-        logger.info("> layered_stack-rails/generate_new")
+        logger.info("> layered_stack-rails/generate")
 
-        yaml_content = YAML.load_file(File.join("..", "app.yml"))
+        yaml_content = YAML.load_file(File.join("app.yml"))
         resources = yaml_content["resources"]
         resources.each do |model_name, model_data|
           if model_data

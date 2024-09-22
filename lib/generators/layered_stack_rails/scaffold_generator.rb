@@ -7,7 +7,7 @@ class LayeredStackRails::ScaffoldGenerator < Rails::Generators::Base
   argument :model_name, type: :string
 
   def execute
-    yaml_content = YAML.load_file(File.join("..", "app.yml"))
+    yaml_content = YAML.load_file(File.join("app.yml"))
 
     model_data = yaml_content["resources"][model_name]
     if model_data
